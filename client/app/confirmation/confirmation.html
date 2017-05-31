@@ -1,0 +1,77 @@
+<div class="container infoPageMainContainer" ng-repeat="x in $ctrl.awesomeThings" >
+    <div class="infoPageMainwrapper">
+        <div class="row  " >
+            <div class="col-md-12" >
+                <div class="confmmessage"><span class="glyphicon glyphicon-ok" style="margin-right:20px;font-size:30px; color:green;"></span>Thank for using DDF</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" ng-repeat="p in $ctrl.awesomeThings"  >
+                <div class="confPoster">
+                    <img src={{p.poster}} alt="image"/>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+			<div class="bookingPanel">	
+			<div class="userbookingsummarywrapper">
+                <div class="userbookingsitems"><div>
+                        <span class="userbookingsitemlabel">Movie Name:</span><span>{{$ctrl.movietitle}}</span>
+                    </div></div>
+                <div class="userbookingsitems"><div>
+                        <span class="userbookingsitemlabel">Therater:</span><span>{{$ctrl.theartername}}</span>
+                    </div></div>
+                <div class="userbookingsitems"><div>
+                        <span class="userbookingsitemlabel"> Show Date:</span><span> {{$ctrl.date}}</span>
+                    </div></div>
+                <div class="userbookingsitems"><div>
+                        <span class="userbookingsitemlabel"> Show Time:</span><span>{{$ctrl.time}} hr</span>
+                    </div></div>
+
+                <div class="userbookingsitems"><div>
+                        <span class="userbookingsitemlabel">Seat Number:</span><span ng-repeat="seats in $ctrl.seat">{{seats}},</span>
+                    </div></div>
+                <div class="grantotalcontainer"><div>
+                        <span class="summarygrandtotal1"> Amount Payable:</span><span  class="badge" style="font-size:1em">Rs <span>{{$ctrl.price}}</span></span>
+                    </div></div>
+					</div>
+			</div>	
+            </div>
+			<div class="col-md-3">
+				<img src="../../../assets/images/sample.png" style="width:200px;height:auto;">
+			</div>
+        </div>
+		<div class="row">
+			<div class="instrucontain">
+				
+<p class="instc">IMPORTANT INSTRUCTIONS</p>
+<ul>
+<li>To collect your tickets from the INOX Box Office, it is mandatory to present the debit/credit card used by you to book tickets along with the booking confirmation (SMS/Computer printout). Amex cards are also valid.</li>
+<li>To counter unforeseen delays, please collect your tickets half an hour before showtime.</li>
+<li>Kindly collect your tickets prior to showtime.</li>
+<li>Tickets purchased for a particular multiplex are valid for that multiplex only.</li>
+</ul>
+<br>
+<p class="instc">Rights of admission reserved. </p>
+<ul>
+<li>Entry is allowed only for valid ticket holders.</li>
+<li>In case a ticket is lost or misplaced, a duplicate ticket cannot be issued.</li>
+<li>The holder of a physical ticket is deemed to be the owner of the ticket.</li>
+<li>Tickets purchased online are not eligible for discounts, schemes or promotions of any kind.</li>
+<li>Individuals below the age of 18 years cannot be admitted for movies certified ``A``. Please carry proof of age for movies certified (A).</li>
+<li>Children aged 3 years and above will require a separate ticket.</li>
+<li>Outside eatables, beverages, chewing gum, cameras, electronic items, weapons, cigarettes, lighters, matchsticks, gutkha, pets, laptop bags are strictly prohibited.</li>
+<li>Ticket holders are required to abide by the policies laid down by the INOX Management.</li>
+<li>Decision(s) taken by INOX shall be final and binding. </li>
+<li>3D Glasses are chargeable (refundable/non-refundable) as per individual cinema policies. Some locations 3D charges may be separately collected at Cinema.</li>
+<br>
+<br>
+Tickets once booked cannot be exchanged. cancelled or refunded.
+The Credit Card and Credit Card Holder must be present at the ticket counter while collecting the ticket(s).
+Service Tax, Swachh Bharat Cess & Krishi Kalyan Cess collected and paid to the department.
+Business Auxiliary Services. PAN Based STC No. AABCB3428PST002.
+</ul>
+			</div>
+		</div>
+    </div>
+</div>

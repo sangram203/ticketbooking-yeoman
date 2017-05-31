@@ -1,0 +1,82 @@
+<div class="infoPageMainContainer">
+<div class="infoPageMainwrapper">
+    <div class="row">
+        <div class="row">
+			
+            <div class="col-md-6 " >
+				<div class="bookingPanel">
+				  <div class="summaryHeader"><span>Payment Details</span></div>
+				<div class="bookingpanelwrapper">
+                <div class="bookingpanelgroup">
+                    <form name="form">
+                        <div class="formCont"><input type="number" name="number" class="form-control" placeholder="card number"  ng-model="$ctrl.number" required/></div>
+						<div class="formCont"><input type="text"   class="form-control"  placeholder="Name on Card" ng-model="$ctrl.name" required/></div>
+						<div class="formCont">
+						<span class="carddetailslabel">Exp Month:</span>
+                         <select class="selectpicker">
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+						</select>
+						<span class="carddetailslabel">Exp Year:</span>
+						<select class="selectpicker">
+                            <option  ng-repeat="y in $ctrl.year" value="{{y}}" >{{y}}</option>
+						</select>
+                        <input type="password" class="usercvv" placeholder="cvv" ng-model="$ctrl.cvv"   required/>
+						</div>
+                        <button class="bookingsummarybutton" ng-click="$ctrl.addthing()" ng-if="!form.$invalid">Pay</button>
+
+                </form>
+				</div>
+				</div>
+            </div>
+			</div>
+            <div class="col-md-6">
+                <div class="bookingPanel">	
+                    <div class="summaryHeader">Booking summary</div>
+                    <div class="userbookingsummarywrapper">
+                        <div class="userbookingsitems"><div>
+                            <span class="userbookingsitemlabel">Movie Name:</span><span>{{$ctrl.movietitle}}</span>
+						</div></div>
+                        <div class="userbookingsitems"><div>
+							<span class="userbookingsitemlabel">Therater:</span><span>{{$ctrl.theartername}}</span>
+						</div></div>
+                        <div class="userbookingsitems"><div>
+							<span class="userbookingsitemlabel"> Show Date:</span><span> {{$ctrl.date}}</span>
+							</div></div>
+                        <div class="userbookingsitems"><div>
+							<span class="userbookingsitemlabel"> Show Time:</span><span>{{$ctrl.time}} hr</span>
+						</div></div>
+
+                        <div class="userbookingsitems"><div>
+							<span class="userbookingsitemlabel">Slected Seat:</span><span ng-repeat="seat in $ctrl.seat">  {{seat}} ,</span>
+						</div></div>
+
+						<a href="#" ng-click="$ctrl.totalpayablebill()">click to see bill summary</a>
+                        <div ng-if="$ctrl.v > 0"><div>
+							<h5><lable class="label label-default"> Booking Fees: </lable><span class="pull-right"> {{$ctrl.bookingfee}} </span><br><br>
+                                    <label class="label label-default"> Service Tax @ 14%  : </label><span class="pull-right"> {{$ctrl.s_tax}} </span><br><br>
+                                    <label class="label label-default">Swachh Bharat Cess @ 0.50%  : </label><span class="pull-right"> {{$ctrl.sbharat}} </span><br><br>
+                                    <label class=" label label-default">Krishi Kalyan Cess @ 0.50%  : </label><span class="pull-right"> {{$ctrl.krishi}} </span><br><br>
+							</h5>
+						</div></div>
+						 <div class="grantotalcontainer"><div>
+							<span class="summarygrandtotal1"> Amount Payable:</span><span  class="badge" style="font-size:1em">Rs <span>{{$ctrl.totalbill}}</span></span>
+						</div></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

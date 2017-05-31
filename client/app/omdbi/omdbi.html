@@ -1,0 +1,80 @@
+ <div style="margin-top:60px; !important">
+ <div class="row">
+ <div class="col-sm-2"></div>
+<div class="col-sm-10">
+ <div>
+
+<div class="row">
+<div class="col-sm-12">
+  <div class="form-group ">
+
+
+<h1 align="center"><label >Search Movie</label></h1>
+<form  name="form">
+ <input type="text" name="t" ng-model="$ctrl.t.title" placeholder="Enter the Movei Name" class="form-control"  required /><br>
+ <!--<input type="number" name="y" ng-model="$ctrl.y" placeholder="Enter the year" class="form-control"  /><br>-->
+ <div class="omdbsearchmoviebutton"><button type="submit" class="bookingsummarybutton" ng-click="$ctrl.getdata()" ng-disabled="form.$invalid">
+   <span class="glyphicon glyphicon-search" aria-hidden="true">	
+ </span>Search</button></div>
+
+<span ng-show="$ctrl.Deleted=='Deleted'" class="alert alert-success">Deleted Successfully</span>
+
+ </form>
+
+<div ng-if="$ctrl.omdbi.results">
+<h3 align="center">  <label class="label label-default">Search Result</label></h3>
+<div class="searchedresult">
+<div class="row">
+  <div class="col-sm-2"><img src="{{$ctrl.moviedata.Poster}}" alt="image" width="150" height="auto"/></div>
+  <div class="col-sm-10"><h2>{{$ctrl.moviedata.Title}}</h2>
+  <p>{{$ctrl.moviedata.Overview}}</p>
+<button type="submit" class="btn btn-primary" ng-click="$ctrl.addThing()">
+<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="container" >
+  <div >
+  <table class="table  ">
+  <h3 align="center">  <label class="label label-default">Curent movies</label></h3>
+<tr>
+  <th>Poster</th>
+  <th>Title</th>
+  <th>Overview</th>
+  <th>Release date</th>
+  <th>Language</th>
+  <th>Popularity</th>
+  <th>Votes</th>
+</tr>
+<tbody>
+  <tr ng-repeat="moves in $ctrl.awesomeThings">
+    <td><img src="{{moves.poster}}" alt="image" width="150" height="auto"/></td>
+    <td>{{moves.title}}</td>
+    <td>{{moves.overview}}</td>
+    <td>{{moves.releaseDate}}</td>
+    <td>{{moves.language}}</td>
+    <td>{{moves.popularity}}</td>
+    <td>{{moves.vote}}</td>
+    <td><button type="submit"  class="btn btn-primary center-block" ng-click="$ctrl.deleteMovie(moves)" >
+      <span class="glyphicon glyphicon-trash" aria-hidden="true">
+    </span></button></td>
+  </tr>
+
+</tbody>
+  </table>
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>

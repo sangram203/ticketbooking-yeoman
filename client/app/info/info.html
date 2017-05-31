@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/style.css" />
+<style>
+.timetable{
+
+font-size:1.1em;
+color:white;
+text-align: center;
+}
+
+
+
+
+</style>
+<div class="container infoPageMainContainer" ng-repeat="x in $ctrl.awesomeThings" >
+<div class="infoPageMainwrapper">
+<div  class="row"  >
+<div class="col-md-12">
+
+<div class="bookedmovieinfo">
+<div  class="row">
+<div class="col-md-4"><div class="moviepostercontainer"><img src="{{x.poster}}"alt="img" class="movieposter"/></div></div>
+<div class="col-md-8">
+<p class="bookedmovietitle" > {{x.title}}</p>
+<p class="bookedmovieoverview" ><span class="moviedetailsSum">Summary:</span>{{x.overview}}</p>
+<p class="bookedmovieoverview" ><span class="moviedetailsSum">Release date:</span>{{x.releaseDate}}</p>
+<p class="bookedmovieoverview" ><span class="moviedetailsSum"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></span>{{x.vote}}</p>
+</div>
+</div>
+</div>
+ 
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+
+<div class="bookingheadings">
+<div class="row">
+<div class="col-sm-3">
+<div class="bookingheadingstext"><p><span class="glyphicon glyphicon-map-marker"></span></p></div>
+<div  class="timetable-div">
+<ul>
+<li ng-repeat="city in $ctrl.newUniquestate " >
+  <a ng-click="$ctrl.getdate(city)"  href="#">{{city}}</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-sm-3">
+<div ng-if="$ctrl.d==1"   >
+  <div class="bookingheadingstext"><p><span class="glyphicon glyphicon-calendar"></span></p></div>
+  <div class="timetable-div" >
+<!-- to select date -->
+<ul>
+<li ng-repeat="date in $ctrl.select_date track by $index" ><a href="#" ng-click=$ctrl.gettime(date,city) >{{date}}</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<!-- select time -->
+<div ng-if="$ctrl.t==1" >
+  <div class="bookingheadingstext"><p><span class="glyphicon glyphicon-time"></span></p></div>
+  <div class="timetable-div">
+  <ul>
+<li ng-repeat="time in $ctrl.selecttime track by $index" >
+      <a href="" ng-click="$ctrl.gettlocation(time)" >{{time}}</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div ng-if="$ctrl.tl==1" >
+  <div class="bookingheadingstext"><p><span class="glyphicon glyphicon-facetime-video"></span></p></div>
+  <div class="timetable-div">
+  <ul>
+<li ng-repeat="name in $ctrl.name track by $index" >
+      <a href="" ng-click="$ctrl.seatselect(name)" >{{name}}</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ </div>
+<!-- first row end -->
+</div>
+</div>

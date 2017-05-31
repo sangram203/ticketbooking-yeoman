@@ -1,0 +1,73 @@
+
+<div style="margin-top:60px; !important">
+<div class="row" >
+<div class="col-md-3"></div>
+<div class="col-md-8">
+<h1 align="center"><label >Enter the theater details</label></h1>
+<form  name="form">
+
+ <!--<input type="text" name="state" ng-model="$ctrl.state" placeholder="Enter the state" class="form-control" required/>-->
+ <div class="form-group">
+	<select ng-model="$ctrl.state" id="cityName" class="form-control" required>
+      <option value="">---Choose a city---</option>
+      <option ng-repeat = "k in $ctrl.numefructe">{{k.city_name }}</option>
+    </select>
+</div>
+<div class="form-group">
+     <select ng-model="$ctrl.location1" class="form-control" required>
+      <option>---Selected---</option>
+      <option ng-repeat = "m in $ctrl.cityList | filter:$ctrl.state">{{m.theatre_name}}</option>
+    </select>
+</div>
+<div class="form-group fromTheatre">
+ <select class="selectpicker form-control" style="color:grey"  name="seat" ng-model="$ctrl.seat" required >
+<option value="" disabled selected hidden>select theater capacity</option>
+<option value="80">80 seats</option>
+<option value="100">100 seats</option>
+<option value="130">130 seats</option>
+ </select>
+ </div>
+ <button type="submit" class="btn btn-primary center-block" ng-click="$ctrl.addThing()" ng-disabled="form.$invalid">
+   <span class="glyphicon glyphicon-plus" aria-hidden="true">
+ </span>  Add Theatre</button>
+ </form><br><br>
+
+
+
+ <table class="table table-responsive">
+   <tr>
+     <th>State</th>
+     <th>Location</th>
+     <th>seats</th>
+   </tr>
+<tbody>
+  <form >
+  <tr ng-repeat="thing in $ctrl.awesomeThings">
+<td><input type="text" value="{{thing.state}}" ng-disabled="disable" /></td>
+<td><input type="text" value="{{thing.location}}" ng-disabled="disable" ></td>
+<td>
+  <input type="text"  value="{{thing.seat}}"  id="useat" ng-model="thing.seat"  ng-disabled="disable"></input>
+  <!-- <select class="selectpicker" name="useat" >
+  <option value="80" ng-model="$ctrl.useat">80 seats</option>
+  <option value="100">100 seats</option>
+  <option value="130">130 seats</option>
+</select> -->
+
+</td>
+
+<td><span ng-init="disable=true"> <a  ng-click="disable=false" style="color:green" href="#">Edit</a></span></td>
+<td><button type="submit" ng-disabled="disable" class="btn btn-primary center-block" ng-click="$ctrl.updatetheater(thing)" >
+  <span class="glyphicon glyphicon-ok" aria-hidden="true">
+</span>  Update</button></td>
+<td><button type="submit" class="btn btn-primary center-block" ng-click="$ctrl.deletetheater(thing)" >
+  <span class="glyphicon glyphicon-trash" aria-hidden="true">
+</span>  Delete</button></td>
+  </tr>
+</form>
+</tbody>
+</table>
+ </div>
+</div>
+
+</div>
+</div>
